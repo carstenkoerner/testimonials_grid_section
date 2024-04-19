@@ -1,0 +1,229 @@
+@import "./typography";
+@import "./resets";
+@import "./variables";
+@import "./mixins";
+
+
+body {
+  background-color: $clr-light-grayish-blue;
+  @include barlow-medium();
+  font-size: $fs-paragraph;
+  min-height: 99svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  
+  &__card {
+    border-radius: 0.5rem;
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem 2rem 2rem;
+    
+    &.daniel {
+      background-color: $clr-moderate-violet;
+      background-image: url("../images/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-size: 6rem 6.45rem;
+      background-position: 88% 0;
+    }
+    
+    &.jonathan {
+      background-color: $clr-very-dark-grayish-blue;
+    }
+    
+    &.jeanette {
+      background-color: $clr-white;
+    }
+    
+    &.patrick {
+      background-color: $clr-very-dark-blackish-blue;
+    }
+    
+    &.kira {
+      background-color: $clr-white;
+    }
+        
+    &__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    &__image {
+      border-radius: 100%;
+      height: 2rem;
+
+      &.daniel {
+        border: 2px solid $clr-light-violet;
+      }
+
+      &.jonathan {
+        border: 2px solid $clr-very-dark-grayish-blue;
+      }
+
+      &.jeanette {
+        border: 2px solid $clr-white;
+      }
+
+      &.patrick {
+        border: 2px solid $clr-moderate-violet;
+      }
+
+      &.kira {
+        border: 2px solid $clr-white;
+      }
+    }
+
+    &__name-container {
+      margin-left: 1rem;
+    }
+    
+    &__name {
+      font-size: 0.75rem;
+      color: $clr-white;
+      @include barlow-medium();
+
+      &.jeanette {
+        color: $clr-very-dark-grayish-blue;
+      }
+
+      &.kira {
+        color: $clr-very-dark-grayish-blue;
+      }
+    }
+
+    &__verified {
+      font-size: 0.7rem;
+      color: $clr-white-05opacity;
+      margin-top: 0.2rem;
+      
+      &.jeanette {
+        color: $clr-very-dark-grayish-blue-50opacity;
+      }
+
+      &.patrick {
+        color: $clr-white-05opacity;
+      }
+
+      &.kira {
+        color: $clr-very-dark-grayish-blue-50opacity;
+      }
+    }
+
+    &__header {
+      margin-top: 1.1rem;
+      font-size: 1.27rem;
+      @include barlow-medium();
+      line-height: 1.5rem;
+
+      &.daniel {
+        color: $clr-white;
+      }
+
+      &.jonathan {
+        color: $clr-white;
+      }
+
+      &.jeanette {
+        color: $clr-very-dark-grayish-blue;
+      }
+
+      &.patrick {
+        color: $clr-white;
+      }
+
+      &.kira {
+        color: $clr-very-dark-grayish-blue;
+      }
+    }
+
+    &__details {
+      margin-top: 1.1rem;
+      font-size: 0.82rem;
+      line-height: 1.15rem;
+
+      &.daniel {
+        color: $clr-white-05opacity;
+      }
+
+      &.jonathan {
+        color: $clr-white-05opacity;
+      }
+
+      &.jeanette {
+        color: $clr-very-dark-grayish-blue-60opacity;
+      }
+
+      &.patrick {
+        color: $clr-white-05opacity;
+      }
+
+      &.kira {
+        color: $clr-very-dark-grayish-blue-60opacity;
+      }
+    }
+  }
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  margin-top: 1rem;
+
+    a { 
+      color: hsl(228, 45%, 44%); 
+    }
+}
+
+@media (width > 1179px) {
+  .cards {
+    max-width: 70rem;
+    height: 33rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.6rem;
+  }
+  .cards__card {
+    max-width: 45rem;
+    &.daniel {
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }
+  }
+  .cards__card {
+    &.jonathan {
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+  }
+  .cards__card {
+    &.jeanette {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+  }
+  .cards__card {
+    &.patrick {
+      grid-column: 2/4;
+      grid-row: 2/3;
+    }
+  }
+  .cards__card {
+    &.kira {
+      grid-column: 4/5;
+      grid-row: 1/3;
+    }
+  }
+  .attribution {
+    margin-top: 4rem;
+  }
+}
